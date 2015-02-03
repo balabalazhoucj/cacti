@@ -1,7 +1,8 @@
 # cacti
-ÊÔÓÃÓÚÔÚdockerÖĞ²¿Êğ
-Æô¶¯ÃüÁî£º
+è¯•ç”¨äºåœ¨dockerä¸­éƒ¨ç½²
+
+å¯åŠ¨å‘½ä»¤ï¼š
 docker run -v /usr/share/zoneinfo/Asia/Shanghai:/etc/localtime -v $(pwd)/cacti/:/cacti -p 80:80 -it centos:6 /bin/sh
-#cd /cacti/
-#sh install.sh
-#supervisord -c /etc/superversiord.conf
+docker#cd /cacti/
+docker#sh install.sh
+docker #supervisord -c /etc/superversiord.conf
