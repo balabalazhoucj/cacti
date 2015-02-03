@@ -4,8 +4,8 @@
 启动命令：
 docker run -v /usr/share/zoneinfo/Asia/Shanghai:/etc/localtime -v $(pwd)/cacti/:/cacti -p 80:80 -it centos:6 /bin/sh
 
-docker#cd /cacti/
+sh-4.1#cd /cacti/
 
-docker#sh install.sh
+sh-4.1#sh install.sh
 
-docker #supervisord -c /etc/superversiord.conf
+sh-4.1#supervisord -c /etc/superversiord.conf
