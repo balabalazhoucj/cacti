@@ -22,17 +22,23 @@ sh cacti_pre.sh
 yum install python-setuptools -y
 easy_install supervisor
 cat << EOF > /etc/supervisord.conf
-[supervisord]                                                               
-nodaemon=true                                                            
-                                                                            
+[supervisord]
+nodaemon=true
+
 [program:mysql]
 command=/usr/bin/mysqld_safe
 
 [program:nginx]
-command=/usr/sbin/nginx -g "daemon off;"     
+command=/usr/sbin/nginx -g "daemon off;"
 
 [program:php-fpm]
 command=/usr/sbin/php-fpm
+
+[program:snmpd]
+command=/usr/sbin/snmpd -LS0-6d -Lf /dev/null -p /var/run/snmpd.pid
+
+[program:crond]
+command=crond
 EOF
 
 supervisord -c /etc/supervisord.conf
